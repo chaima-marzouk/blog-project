@@ -8,8 +8,8 @@
   // App Root
   define('APPROOT', dirname(dirname(__FILE__)));
   // URL Root
-  define('URLROOT', 'http://localhost/shareposts');
+  define('URLROOT', 'http://localhost/blog-project');
   // Site Name
-  define('SITENAME', 'SharePosts');
+  define('SITENAME', 'blog-project');
   // App Version
   define('APPVERSION', '1.0.0');
