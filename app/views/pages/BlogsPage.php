@@ -8,18 +8,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css" >
+    <!-- <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css" > -->
     <title>Blog crud</title>
 </head>
 <body>
         <!-- header -->
-        <nav class="navbar bg-dark">
+        <nav class="navbar " style="background-color: #D8CEC4;">
         <span class="navbar-brand text-white h1 m-2">
-        J.K
-        </span>
-        <!-- add button and form -->
-        <button  type="button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Add new episode</button>
+        <i class="fas fa-book"></i>
+        <h1>BOOKS time</h1>
 
+        </span>
+        
+        <!-- add button and form -->
+        <button  type="button" class="btn text-white m-2" style="background-color: #0D4E6D;" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Add new episode</button>
+        </nav>
+        <h1 class="text-center">Harry poter's Episodes</h1>
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"aria-hidden="true">
                             <div class="modal-dialog">
                               <div class="modal-content">
@@ -69,7 +73,7 @@
                 <h5 class="card-title"><?php echo $row->titre ;?></h5>
                 <p class="card-text text-center"><?php echo $row->description ;?></p>
                <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <button type="button" class="btn text-white"  style="background-color: #0D4E6D;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     Launch static backdrop modal
                     </button>
 
@@ -100,6 +104,8 @@
      </div>
      <?php endforeach ?>
 </div>
+
+
 
 </body>
 </html>

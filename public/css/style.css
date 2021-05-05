@@ -1,7 +1,108 @@
-/* @media (min-width: 768px){
-    .container{
-        display: flex;
-        justify-content: space-between;
-    }
-} */
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    text-align: center;
+}
+.wrapper{
+    width: 1170px;
+    margin: 0 auto;
 
+}
+header{
+    height: 100px;
+    background-color: rgb(92, 8, 8, 0.9);;
+    width: 100%;
+    z-index: 12;
+    position: fixed;
+
+}
+
+
+.logo{
+    width: 30%;
+    float: left;
+    line-height: 100px;
+    
+}
+
+.logo a{
+    text-decoration: none;
+    font-size: 30px;
+    font-family: bignoodleftling;
+    letter-spacing: 5px;
+    color: rgb(255, 255, 255);
+
+}
+nav{
+    float: right;
+    line-height: 100px;
+    
+
+}
+nav a{
+    text-decoration: none;
+    font-family: bignoodleftling;
+    letter-spacing: 4px;
+    font-size: 20px;
+    margin: 0 10px;
+    color: rgb(255, 255, 255);
+
+}
+nav a:hover{
+    color: rgb(165, 163, 18);
+}
+
+
+
+
+
+
+.banner-area {
+    width: -webkit-fill-available;
+    height: 500px;
+    position: fixed;
+    top: 100px;
+    background-image: url(../img/pexels-dzenina-lukac-1005012.jpg);
+    -webkit-background-size: cover;
+    background-position: center center;
+
+}
+
+.banner-area h2{
+    padding-top: 8%;
+    font-size: 70%;
+    font-family: poppins;
+    text-transform: uppercase;
+    color: #fff;
+
+
+}
+.content-area{
+    width: 100%;
+    position: relative;
+    top: 450px;
+    background: #ddd;
+    height: 1500px;
+
+}
+button{
+    margin-left: 20px;
+}
+.content-area h2{
+    font-family: bignoodleftling;
+    letter-spacing: 4px;
+    padding-top: 30px;
+    font-size: 40px;
+    margin: 0;
+
+}
+.content-area h1{
+    font-family: bignoodleftling;
+    letter-spacing: 4px;
+    padding-top: 30px;
+    font-size: 40px;
+    margin: 0;
+
+}
