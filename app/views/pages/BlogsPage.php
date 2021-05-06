@@ -8,22 +8,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css" > -->
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/styleAdmin.css" >
     <title>Blog crud</title>
 </head>
 <body>
         <!-- header -->
-        <nav class="navbar " style="background-color: #D8CEC4;">
-        <span class="navbar-brand text-white h1 m-2">
-        <i class="fas fa-book"></i>
-        <h1>BOOKS time</h1>
-
-        </span>
-        
-        <!-- add button and form -->
+        <header>
+           <div class="wrapper"> 
+                <div class="logo">
+                    <a href="#">BOOKS TIME </a>  
+                </div>
+                
+                <nav> 
+                    <a href="<?php echo URLROOT;?>/UserControllers/Home">Home</a>
+                    <a href="<?php echo URLROOT;?>/UserControllers/Home">Logout</a>  
+                    <!-- add button and form -->
         <button  type="button" class="btn text-white m-2" style="background-color: #0D4E6D;" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Add new episode</button>
-        </nav>
-        <h1 class="text-center">Harry poter's Episodes</h1>
+        </nav>  
+                </nav>
+            </div>
+    </header>
+        
+        
+        <h1 class="text-center m-5">Harry Potter's Episodes</h1>
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"aria-hidden="true">
                             <div class="modal-dialog">
                               <div class="modal-content">
@@ -59,7 +66,7 @@
                         </div>
                       </div>
                     </div>
-        </nav>
+        
         <!-- header -->
 <div class="container">
     <!-- <div class="test"> -->
@@ -95,8 +102,12 @@
                     </div>
                 </div>
                 </div>
+                    <!-- delete -->
                     <div><a href="<?php echo URLROOT;?>/UserController/delete?id=<?php echo $row->id;?>" button  style="margin: 25px;" type="submit" name="delete" class="btn btn-danger">Delete</button></a>
-                    <a href="<?php echo URLROOT; ?>/UserController/edit"><button type="submit" name="update" class="btn btn-success">Update</button></a>
+                    <!-- edit -->
+                    
+
+                    <button  type="button" class="btn btn-success m-2" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">update</button>
                      
              </div>
           </div>

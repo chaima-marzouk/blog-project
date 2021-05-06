@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* text-align: center; */
+    background: #EAE4E4;
+}
+header{
+    height: 100px;
+    background-color: rgb(92, 8, 8, 0.9);;
+    width: 100%;
+   
+
+}
+nav a{
+    text-decoration: none;
+    font-family: bignoodleftling;
+    letter-spacing: 4px;
+    font-size: 20px;
+    margin-right: 10vh;
+    color: rgb(255, 255, 255);
+    
+
+
+}
+
+.logo{
+    width: 30%;
+    float: left;
+    line-height: 100px;
+    text-align: center; 
+
+    
+}
+
+.logo a{
+    text-decoration: none;
+    font-size: 30px;
+    font-family: bignoodleftling;
+    letter-spacing: 5px;
+    color: rgb(255, 255, 255);
+
+}
+
+nav{
+    float: right;
+    line-height: 100px;
+    
+
+}
+h1{
+    margin-top: 20vh;
+    text-align: center; 
+    color: #732a2a;
+}
+nav a:hover{
+    color: rgb(165, 163, 18);
+}

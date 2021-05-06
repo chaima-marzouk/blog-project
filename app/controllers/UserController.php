@@ -78,6 +78,20 @@ class UserController extends Controller
     //         $this->view('pages/BlogsPage', $data);
     //     }
     // }
+    public function Admin()
+    {
+        
+        $this->view('pages/Signin');
+        
+
+    }
+    public function Home()
+    {
+        
+        $this->view('pages/Home');
+        
+
+    }
 
 
     public function insert()
@@ -111,10 +125,40 @@ class UserController extends Controller
 
         $this->callModel->deleteUser($data);
 
-        header('location:' . URLROOT . '/' . 'UsersController/BlogsPage');
+        header('location:' . URLROOT . '/' . 'UsersController/index');
     
     
 }
+
+            public function update($id)
+            {
+
+            if (isset($_POST["submit"]))
+            {
+
+
+                $params=[ 
+            'id'=>$id,
+            'titre' =>$_POST['titre'],
+            'contenu' => $_POST['contenu'],
+            'description' => $_POST['description'],
+                ];
+                $this->callModel->updatePost($params);
+                // header('location:'.URLROOT.'/' . '/contact/index');
+                header('location:'.URLROOT);
+            }
+            else {
+                $contact = $this->callModel->getPostctbyId($id);
+
+
+
+                $this->view('pages/BlogsPage',$contact);
+            }
+
+        }
+
+
+            
 }
 
 
@@ -130,4 +174,3 @@ class UserController extends Controller
 
 
 
-?>

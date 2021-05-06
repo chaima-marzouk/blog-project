@@ -43,7 +43,7 @@ class UserModel {
 
     public function getContactById($id)
     {
-        $this->database->query('SELECT * FROM `information` WHERE id = :id');
+        $this->database->query('SELECT * FROM `bloger` WHERE id = :id');
         $this->database->bind(':id' , $id);
 
         $row = $this->database->single();
@@ -51,6 +51,28 @@ class UserModel {
         return $row;
  
     }
+
+    public function getPostbyId($id){
+        $this->database->query("SELECT * FROM `blogs` WHERE id = :id");
+        $this->database->bind(':id',$id);
+  
+        $results = $this->database->single();
+  
+        return $results;
+      }
+
+
+      public function updatePost($params)
+      {
+        $this->database->query("UPDATE blogs  SET titre= :titre, contenu= :contenu, description= :description WHERE id= :id");
+        $this->database->bind(':titre', $params['titre']);
+        $this->database->bind(':contenu',$params['contenu']);
+        $this->database->bind(':description',$params['description']);
+        $this->database->bind(':id',$params['id']);
+        $this->database->execute();
+        // return $database;
+  
+      }
 
      // <--// delete//-->
 
