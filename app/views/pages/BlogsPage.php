@@ -107,7 +107,7 @@
                     <!-- edit -->
                     
 
-                    <button  type="button" class="btn btn-success m-2" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">update</button>
+                    <a href="<?php echo URLROOT; ?>/UserController/update?id=<?php echo $row->id;?>"><button  type="button" name="update" class="btn btn-success m-2" >update</button></a>
                      
              </div>
           </div>

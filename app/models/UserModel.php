@@ -70,7 +70,11 @@ class UserModel {
         $this->database->bind(':description',$params['description']);
         $this->database->bind(':id',$params['id']);
         $this->database->execute();
-        // return $database;
+        if($this->database->execute()){
+            return true;
+          } else {
+            return false;
+          }
   
       }
 

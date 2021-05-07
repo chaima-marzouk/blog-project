@@ -133,24 +133,22 @@ class UserController extends Controller
             public function update($id)
             {
 
-            if (isset($_POST["submit"]))
-            {
-
-
+                if (isset($_POST['update'])) {
+                    //load the view insert
+                    $this->view('pages/edit' ,$id);
+            
                 $params=[ 
-            'id'=>$id,
-            'titre' =>$_POST['titre'],
-            'contenu' => $_POST['contenu'],
-            'description' => $_POST['description'],
+                'id'=>$id,
+                'titre' =>$_POST['titre'],
+                'contenu' => $_POST['contenu'],
+                'description' => $_POST['description'],
                 ];
                 $this->callModel->updatePost($params);
                 // header('location:'.URLROOT.'/' . '/contact/index');
                 header('location:'.URLROOT);
-            }
+                }
             else {
                 $contact = $this->callModel->getPostctbyId($id);
-
-
 
                 $this->view('pages/BlogsPage',$contact);
             }
