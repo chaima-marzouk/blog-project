@@ -11,22 +11,25 @@
     <title>Edit</title>
 </head>
 <body>
-<form action="<?php echo URLROOT; ?>/UserController/Edit" methode="post" style="width: 500px; margin: auto">
+ 
+
+<form action="<?php echo URLROOT; ?>/UserController/update/<?php echo $data->id ?>" method="post" style="width: 500px; margin: auto">
   <div class="form-group">
     <label for="exampleInputEmail1">titre</label>
-    <input type="text" value="<?php echo $row->titre ;?>" name="titre" class="form-control"  placeholder="">
+    <input type="text" value="<?php echo $data->titre ;?>" name="titre" class="form-control"  placeholder="">
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">description</label>
-    <input type="text" name="description" value="<?php echo $row->description ;?>" class="form-control" >
+    <input type="text" name="description" value="<?php echo $data->description ;?>" class="form-control" >
   </div>
   <div class="form-group">
   <label for="exampleInputPassword1">contenu</label>
-    <input type="checkbox" value="<?php echo $row->contenu ;?>" name="contenu" class="form-check-input" id="exampleCheck1">
+    <input type="text" value="<?php echo $data->contenu ;?>" name="contenu" >
     
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" name="submit_edit">Submit</button>
 </form>
+
 </body>
 </html>

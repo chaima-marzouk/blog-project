@@ -43,7 +43,7 @@ class UserModel {
 
     public function getContactById($id)
     {
-        $this->database->query('SELECT * FROM `bloger` WHERE id = :id');
+        $this->database->query('SELECT * FROM `blogs` WHERE id = :id');
         $this->database->bind(':id' , $id);
 
         $row = $this->database->single();
@@ -69,7 +69,7 @@ class UserModel {
         $this->database->bind(':contenu',$params['contenu']);
         $this->database->bind(':description',$params['description']);
         $this->database->bind(':id',$params['id']);
-        $this->database->execute();
+        $params=$this->database->execute();
         if($this->database->execute()){
             return true;
           } else {

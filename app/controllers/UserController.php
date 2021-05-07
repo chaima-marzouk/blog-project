@@ -80,15 +80,15 @@ class UserController extends Controller
     // }
     public function Admin()
     {
-        
+       
         $this->view('pages/Signin');
         
 
     }
-    public function Home()
+    public function Home($data)
     {
-        
-        $this->view('pages/Home');
+        $data = $this->callModel->getUser();
+        $this->view('pages/Home', $data);
         
 
     }
@@ -117,7 +117,8 @@ class UserController extends Controller
     }
 
 
-    public function delete() {
+    public function delete()
+     {
             
         $data = [
             'id' => $_GET['id']
@@ -128,33 +129,40 @@ class UserController extends Controller
         header('location:' . URLROOT . '/' . 'UsersController/index');
     
     
-}
+    }
 
             public function update($id)
             {
+                
+                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                    $params=[ 
+                        'id'=>$id,
+                        'titre' =>$_POST['titre'],
+                        'contenu' => $_POST['contenu'],
+                        'description' => $_POST['description'],
+                        ];
+                        $this->callModel->updatePost($params);
+                        header('location:'.URLROOT.'/' . 'pages/Edit');  
+                }else{
+                    
 
-                if (isset($_POST['update'])) {
-                    //load the view insert
-                    $this->view('pages/edit' ,$id);
-            
-                $params=[ 
-                'id'=>$id,
-                'titre' =>$_POST['titre'],
-                'contenu' => $_POST['contenu'],
-                'description' => $_POST['description'],
-                ];
-                $this->callModel->updatePost($params);
-                // header('location:'.URLROOT.'/' . '/contact/index');
-                header('location:'.URLROOT);
+$data = $this->callModel->getPostbyId($id);
+
+                    $this->view('pages/Edit',$data);
                 }
-            else {
-                $contact = $this->callModel->getPostctbyId($id);
+               
+                //load the view insert
+                
+                }
+            // else {
+            //     // $contact = $this->callModel->getContactById($id);
 
-                $this->view('pages/BlogsPage',$contact);
-            }
+            //     // $this->view('pages/Edit',$contact);
+            //     header('location:'.URLROOT.'/' . '/pages/Edit');
+            //     echo "something went wrong";
+            // }
 
-        }
-
+        
 
             
 }
