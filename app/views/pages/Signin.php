@@ -18,20 +18,24 @@
                 </div>
                 
                 <nav>
-                    <a href="">Home</a>
+                    <a href="<?php echo URLROOT;?>/UserControllers/Home">Home</a>
                 </nav>
             </div>
     </header>
     <h1 class="">  Signin</h1>
 
-            <form style="width: 500px; margin: auto" > 
+            <form action="<?php echo URLROOT; ?>/UserControllers/login" method="post" style="width: 500px; margin: auto" > 
             <div class="form-group ">
+                <?php if (isset($data['email_err'])) {
+                                    echo $data['email_err'];
+                                } ?>
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" name="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                
+                <input type="email" name="email" class="form-control <?php echo (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input type="password" name="password" class="form-control <?php echo (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>" id="exampleInputPassword1" placeholder="Password">
             </div>
             <button
                         type="submit" value="submit" name="submit" style="margin-top: 20px;"
