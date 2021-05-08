@@ -13,6 +13,11 @@ class UserController extends Controller
         $data = $this->callModel->getUser();
         $this->view('pages/Home' ,$data);
     }
+
+    public function crud($data)
+    {
+        $this->view('pages/BlogsPage', $data);
+    }
     
     public function Admin()
     {
