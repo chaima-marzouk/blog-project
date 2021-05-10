@@ -14,9 +14,10 @@ class UserController extends Controller
         $this->view('pages/Home' ,$data);
     }
 
-    public function crud($data)
+    public function crud()
     {
-        $this->view('pages/BlogsPage', $data);
+        $data =$this->callModel->getUser();
+        $this->view('pages/BlogsPage' ,$data);
     }
     
     public function Admin()
@@ -141,8 +142,9 @@ class UserController extends Controller
 
                 if ($loggedInUser) {
                     // Create Session
+                    $this->callModel->getUser();
                     // $this->view('pages/BlogsPage', $data);
-                    header('location:'.URLROOT.'/' . 'pages/BlogsPage'); 
+                    header('location:'.URLROOT.'/' . 'UserController/crud'); 
                 } else {
                     $data['password_err'] = 'Password incorrect';
                     $this->view('pages/Signin', $data);
@@ -163,6 +165,7 @@ class UserController extends Controller
 
             // Load view
             $this->view('pages/BlogsPage', $data);
+            // header('location:'.URLROOT.'/' . 'UserController/crud'); 
         }
     }
           
