@@ -12,7 +12,7 @@ body{
 }
 header{
     height: 100px;
-    background-color: rgb(92, 8, 8, 0.9);;
+    background-color: rgb(92, 8, 8, 0.9);
     width: 100%;
     z-index: 12;
     position: fixed;
@@ -91,7 +91,7 @@ nav a:hover{
     position: relative;
     top: 450px;
     background: #ddd;
-    height: 324vh;
+    height:  -webkit-fill-available;
 
 }
 

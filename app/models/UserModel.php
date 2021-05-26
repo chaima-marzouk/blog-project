@@ -103,6 +103,7 @@ class UserModel {
          $row = $this->database->single();
  
          $hashed_password = $row->password;
+         
          if ($password == $hashed_password) {
              return $row;
          } else {

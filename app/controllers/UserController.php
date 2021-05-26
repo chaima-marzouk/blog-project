@@ -1,11 +1,13 @@
 <?php 
 
-
+//heritage
 class UserController extends Controller
 {
+
     public function __construct()
     {
-        $this->callModel = $this->model('UserModel');;
+        //instanciation du model
+        $this->callModel = $this->model('UserModel');
     }
 
     public function index()
@@ -27,7 +29,7 @@ class UserController extends Controller
      
     }
 
-    public function Home($data)
+    public function Home()
     {
         $data = $this->callModel->getUser();
         $this->view('pages/Home', $data);
@@ -53,7 +55,7 @@ class UserController extends Controller
            ];
             //consomation du data
             $this->callModel->addUser($data);
-            header('location: ' . URLROOT . '/' . 'UserController/BlogsPage');
+            header('location: ' . URLROOT . '/' . 'UserController/crud');
         }
       
     }
@@ -68,7 +70,7 @@ class UserController extends Controller
 
         $this->callModel->deleteUser($data);
 
-        header('location:' . URLROOT . '/' . 'UsersController/index');
+        header('location:' . URLROOT . '/' . 'UsersController/crud');
     
     
     }
@@ -84,7 +86,7 @@ class UserController extends Controller
                         'description' => $_POST['description'],
                         ];
                         $this->callModel->updatePost($params);
-                        header('location:'.URLROOT.'/' . 'pages/Edit');  
+                        header('location:'.URLROOT.'/' . 'pages/crud'); 
                 }else{
                     
 
@@ -100,6 +102,7 @@ class UserController extends Controller
             public function login()
     {
         // Check for POST
+        // $_SERVER — Variables de serveur et d'exécution
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                        // Process form
             // Sanitize POST data
@@ -141,7 +144,7 @@ class UserController extends Controller
                 $loggedInUser = $this->callModel->login($data['email'], $data['password']);
 
                 if ($loggedInUser) {
-                    // Create Session
+                    
                     $this->callModel->getUser();
                     // $this->view('pages/BlogsPage', $data);
                     header('location:'.URLROOT.'/' . 'UserController/crud'); 

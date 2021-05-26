@@ -21,7 +21,7 @@
                     <a href="<?php echo URLROOT;?>/UserControllers/Home">Logout</a>  
                     <!-- add button and form -->
         <button  type="button" class="btn text-white m-2" style="background-color: #0D4E6D;" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Add new episode</button>
-        </nav>  
+         
                 </nav>
             </div>
     </header>
@@ -57,7 +57,6 @@
                         data-mdb-ripple-color="dark"
                         >submit</button>
                         
-                            
                             </div>
                           </div>
                         </div>
